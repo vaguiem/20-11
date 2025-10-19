@@ -1113,21 +1113,22 @@
         }
 
         #back-card .textLetter h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #d63384;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(214, 51, 132, 0.2);
-            font-family: 'Arial', sans-serif;
+            font-size: 32px;             /* đồng cỡ với lá trước */
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff6b9d, #ff8fab, #ffb3d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         #back-card .textLetter .contentLetter {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #495057;
-            font-weight: 400;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #8B4A6B;
+            font-style: italic;
+            text-shadow: 0 1px 2px rgba(255, 182, 193, 0.3);
         }
 
         /* Khung viền dashed bên trong lá sau */
@@ -1832,16 +1833,7 @@
             });
 
             $('.fa-xmark').click(function () {
-                // Smooth close animation
-                $('.wrapperLetterForm').css({
-                    'opacity': '0',
-                    'transform': 'scale(0.8)',
-                    'transition': 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                });
-                
-                setTimeout(() => {
-                    $('.wrapperLetterForm').css('display', 'none');
-                }, 500);
+                $('.wrapperLetterForm').css('display', 'none');
             });
         });
         var leafOne = document.querySelector('.leafOne');
