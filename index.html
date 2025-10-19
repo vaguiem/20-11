@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>For you</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css"
         integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w=="
@@ -57,6 +57,8 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .body-letter {
@@ -497,6 +499,8 @@
             display: flex;
             align-items: center;
             user-select: none;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .textLetter h2 {
@@ -642,6 +646,8 @@
             display: flex;
             align-items: center;
             user-select: none;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .textLetter h2 {
@@ -1171,49 +1177,106 @@
             opacity: 0.9;
         }
 
-        /* Responsive tối ưu cho điện thoại */
+        /* Responsive tối ưu cho iPhone và điện thoại */
         @media (max-width: 768px) {
             .boxLetter { 
-                --card-w: 95vw; 
-                --card-h: calc(95vw * 0.7); 
-                padding: 10px;
+                --card-w: 90vw; 
+                --card-h: calc(90vw * 0.8); 
+                padding: 8px;
+                max-width: 400px;
+                margin: 0 auto;
             }
             
-            /* Tối ưu lá thư trước */
+            /* Tối ưu lá thư trước - font dễ đọc hơn */
             .textLetter h2 { 
-                font-size: 22px; 
-                margin-bottom: 8px;
-                line-height: 1.2;
+                font-size: 24px; 
+                margin-bottom: 12px;
+                line-height: 1.3;
+                font-weight: 600;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             }
             .textLetter .contentLetter { 
-                font-size: 16px; 
-                line-height: 1.4;
-                padding: 0 15px;
-                margin-top: 8px;
+                font-size: 18px; 
+                line-height: 1.6;
+                padding: 0 20px;
+                margin-top: 12px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-weight: 400;
             }
             
             /* Tối ưu lá thư sau */
             #back-card .textLetter h2 {
-                font-size: 20px;
-                margin-bottom: 10px;
-                line-height: 1.2;
+                font-size: 22px;
+                margin-bottom: 12px;
+                line-height: 1.3;
+                font-weight: 600;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             }
             #back-card .textLetter .contentLetter { 
-                font-size: 15px; 
-                line-height: 1.5;
-                padding: 0 10px;
+                font-size: 17px; 
+                line-height: 1.6;
+                padding: 0 15px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-weight: 400;
             }
             
             /* Tối ưu hint text */
+            .hint-next {
+                font-size: 14px;
+                bottom: 15px;
+                padding: 6px 12px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            }
+            
+            /* Tối ưu padding lá thư */
+            .formLetter {
+                padding: 20px 15px;
+                box-sizing: border-box;
+            }
+            
+            #back-card .textLetter {
+                padding: 25px 20px;
+                box-sizing: border-box;
+            }
+        }
+        
+        /* Responsive cho iPhone nhỏ */
+        @media (max-width: 480px) {
+            .boxLetter { 
+                --card-w: 92vw; 
+                --card-h: calc(92vw * 0.85); 
+                padding: 5px;
+                max-width: 350px;
+            }
+            
+            .textLetter h2 { 
+                font-size: 22px; 
+                margin-bottom: 10px;
+            }
+            .textLetter .contentLetter { 
+                font-size: 16px; 
+                padding: 0 15px;
+                line-height: 1.5;
+            }
+            
+            #back-card .textLetter h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            #back-card .textLetter .contentLetter { 
+                font-size: 15px; 
+                padding: 0 12px;
+                line-height: 1.5;
+            }
+            
             .hint-next {
                 font-size: 12px;
                 bottom: 10px;
                 padding: 4px 8px;
             }
             
-            /* Tối ưu padding lá thư */
             .formLetter {
-                padding: 15px 10px;
+                padding: 15px 12px;
             }
             
             #back-card .textLetter {
@@ -1221,33 +1284,29 @@
             }
         }
         
-        /* Responsive cho màn hình rất nhỏ */
-        @media (max-width: 480px) {
+        /* Tối ưu cho iPhone X/11/12/13/14/15 */
+        @media (max-width: 414px) {
             .boxLetter { 
-                --card-w: 98vw; 
-                --card-h: calc(98vw * 0.75); 
-                padding: 5px;
+                --card-w: 94vw; 
+                --card-h: calc(94vw * 0.9); 
+                padding: 3px;
+                max-width: 320px;
             }
             
             .textLetter h2 { 
                 font-size: 20px; 
             }
             .textLetter .contentLetter { 
-                font-size: 14px; 
-                padding: 0 10px;
+                font-size: 15px; 
+                padding: 0 12px;
             }
             
             #back-card .textLetter h2 {
                 font-size: 18px;
             }
             #back-card .textLetter .contentLetter { 
-                font-size: 13px; 
-                padding: 0 8px;
-            }
-            
-            .hint-next {
-                font-size: 11px;
-                bottom: 5px;
+                font-size: 14px; 
+                padding: 0 10px;
             }
         }
 
