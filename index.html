@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>women's day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For you</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css"
         integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -511,7 +511,9 @@
             margin-top: 10px;
             font-family: 'Dancing Script', cursive;
             position: initial;
-
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         } */
 
 
@@ -654,7 +656,9 @@
             margin-top: 10px;
             font-family: 'Dancing Script', cursive;
             position: initial;
-
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .fa-xmark {
@@ -1167,18 +1171,83 @@
             opacity: 0.9;
         }
 
-        /* Responsive nhẹ (không đổi layout, chỉ co theo viewport nhỏ) */
+        /* Responsive tối ưu cho điện thoại */
         @media (max-width: 768px) {
             .boxLetter { 
-                --card-w: 90vw; 
-                --card-h: calc(90vw * 0.6); 
+                --card-w: 95vw; 
+                --card-h: calc(95vw * 0.7); 
+                padding: 10px;
             }
+            
+            /* Tối ưu lá thư trước */
             .textLetter h2 { 
-                font-size: 26px; 
+                font-size: 22px; 
+                margin-bottom: 8px;
+                line-height: 1.2;
             }
-            .textLetter .contentLetter, 
+            .textLetter .contentLetter { 
+                font-size: 16px; 
+                line-height: 1.4;
+                padding: 0 15px;
+                margin-top: 8px;
+            }
+            
+            /* Tối ưu lá thư sau */
+            #back-card .textLetter h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
             #back-card .textLetter .contentLetter { 
-                font-size: 18px; 
+                font-size: 15px; 
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+            
+            /* Tối ưu hint text */
+            .hint-next {
+                font-size: 12px;
+                bottom: 10px;
+                padding: 4px 8px;
+            }
+            
+            /* Tối ưu padding lá thư */
+            .formLetter {
+                padding: 15px 10px;
+            }
+            
+            #back-card .textLetter {
+                padding: 20px 15px;
+            }
+        }
+        
+        /* Responsive cho màn hình rất nhỏ */
+        @media (max-width: 480px) {
+            .boxLetter { 
+                --card-w: 98vw; 
+                --card-h: calc(98vw * 0.75); 
+                padding: 5px;
+            }
+            
+            .textLetter h2 { 
+                font-size: 20px; 
+            }
+            .textLetter .contentLetter { 
+                font-size: 14px; 
+                padding: 0 10px;
+            }
+            
+            #back-card .textLetter h2 {
+                font-size: 18px;
+            }
+            #back-card .textLetter .contentLetter { 
+                font-size: 13px; 
+                padding: 0 8px;
+            }
+            
+            .hint-next {
+                font-size: 11px;
+                bottom: 5px;
             }
         }
 
